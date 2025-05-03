@@ -1,0 +1,117 @@
+/*  ----------  DESIGN TOKENS  ----------  */
+/* Contrast-safe palette (AA 4.5:1 for text on bg-neutral)              */
+:root {
+  --clr-primary-700:#1F4F5A;   /* darkest for headings / focus rings   */
+  --clr-primary-500:#2B6777;   /* brand base                           */
+  --clr-primary-100:#E4EFF2;   /* very light tint for cards/sections   */
+
+  --clr-accent-700:#C73E5C;    /* darker pink – passes AA on neutral   */
+  --clr-accent-500:#E95E7A;
+  --clr-accent-100:#FFF4F6;
+
+  --clr-neutral-900:#2D3436;
+  --clr-neutral-100:#F7F9FA;
+
+  --ff-sans:"Inter",system-ui,sans-serif;
+  --step--1: clamp(.9rem,.86rem + .2vw,1rem);
+  --step-0 : clamp(1rem,.95rem + .3vw,1.25rem);
+  --step-1 : clamp(1.375rem,1.25rem + .5vw,1.75rem);
+  --step-2 : clamp(2rem,1.75rem + .8vw,2.75rem);
+  --radius-2: .5rem;
+  --transition: .25s cubic-bezier(.4,0,.2,1);
+}
+/*  ----------  GLOBAL RESET / BASE  ----------  */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font: var(--step-0)/1.6 var(--ff-sans);color:var(--clr-neutral-900);
+      background:var(--clr-neutral-100);}
+img,svg{display:block;max-width:100%;height:auto}
+a{color:inherit}
+/* Skip link for keyboard users */
+.skip-link{position:absolute;left:-999px;top:auto;background:var(--clr-primary-700);
+           color:#fff;padding:.5rem 1rem;border-radius:var(--radius-2);}
+.skip-link:focus{left:1rem;top:1rem;z-index:10000}
+
+/*  ----------  LAYOUT UTILS  ----------  */
+.container{width: min(90%,70rem);margin-inline:auto;padding-block:2rem}
+.grid-auto-fit{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+
+/*  ----------  HEADER & NAV  ----------  */
+.header{position:sticky;top:0;background:#fff;box-shadow:0 2px 8px rgb(0 0 0/.05);z-index:100}
+.header__inner{display:flex;justify-content:space-between;align-items:center;padding-block:1rem}
+.logo img{height:48px;transition:transform var(--transition)}
+.logo:hover img{transform:scale(1.05)}
+.nav-toggle{background:none;border:none;aspect-ratio:1/1;padding:.5rem;cursor:pointer}
+.nav-toggle img{height:24px;width:24px}
+.nav{position:fixed;inset-block-start:var(--header-h,70px);inset-inline:0;
+     background:#fff;transform:translateY(-110%);transition:transform var(--transition);}
+.nav[aria-expanded="true"]{transform:none}
+.nav__list{list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem}
+.nav__list a{display:block;padding:1rem;border-radius:var(--radius-2);
+             text-decoration:none;transition:background var(--transition)}
+.nav__list a:hover,.nav__list a:focus{background:var(--clr-primary-100)}
+/* Desktop nav */
+@media (min-width: 62rem){
+  .nav{position:static;transform:none;background:unset}
+  .nav-toggle{display:none}
+  .nav__list{flex-direction:row;gap:1.5rem}
+  .nav__list a{padding-block:.25rem}
+}
+/*  ----------  HERO  ----------  */
+.hero{--overlay: rgba(43,103,119,.85);
+      background:linear-gradient(var(--overlay),var(--overlay)),
+                 url('../images/hero-home.jpg') center/cover;
+      color:#fff;text-align:center;padding:6rem 0}
+.hero h1{font-size:var(--step-2);line-height:1.2;margin-bottom:1rem}
+.tagline{font-size:var(--step--1);max-width:40ch;margin-inline:auto}
+
+/*  ----------  BUTTONS  ----------  */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;
+     padding:.75rem 1.75rem;border-radius:999px;border:2px solid transparent;
+     transition:transform var(--transition),background var(--transition)}
+.btn--primary{background:var(--clr-accent-500);color:#fff}
+.btn--primary:hover{background:var(--clr-accent-700);transform:translateY(-2px)}
+.btn--secondary{background:var(--clr-primary-500);color:#fff}
+.btn--secondary:hover{background:var(--clr-primary-700);transform:translateY(-2px)}
+
+/*  ----------  CARD GRID  ----------  */
+.card-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.card{background:#fff;padding:2rem;border-radius:var(--radius-2);text-align:center;
+      box-shadow:0 4px 12px rgb(0 0 0/.05);transition:transform var(--transition)}
+.card:hover{transform:translateY(-4px)}
+.card-icon{height:64px;margin-bottom:1rem}
+
+/*  ----------  FORMS  ----------  */
+form{display:grid;gap:1rem}
+input,textarea,select{width:100%;padding:.75rem;border:1px solid #ccc;border-radius:var(--radius-2)}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--clr-accent-500);outline-offset:2px}
+
+/*  ----------  FOOTER  ----------  */
+.footer{background:var(--clr-primary-500);color:#fff;padding-block:3rem;margin-top:4rem}
+.footer__inner{display:flex;flex-direction:column;align-items:center;gap:1rem}
+.social-links{display:flex;gap:1.25rem}
+.social-links img{width:24px;transition:transform var(--transition)}
+.social-links a:hover img{transform:translateY(-3px)}
+
+/* —— Calendar —— */
+.cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.cal-head h2{font-size:var(--step-1);margin:0}
+.cal-prev,.cal-next{background:none;border:none;font-size:1.5rem;cursor:pointer}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:.25rem}
+.cal-dow{font-weight:600;text-align:center;padding:.25rem 0}
+.cal-cell{aspect-ratio:1/1;border:none;border-radius:.4rem;background:#fff;
+          box-shadow:0 1px 4px rgb(0 0 0/.05);cursor:pointer;position:relative}
+.cal-cell:hover{background:var(--clr-primary-100)}
+.cal-cell.has-event::after{
+   content:'•';color:var(--clr-accent-500);position:absolute;top:.25rem;right:.25rem;font-size:1.25rem}
+.cal-pad{background:transparent;box-shadow:none;cursor:default}
+
+/* —— Event modal —— */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:grid;
+       place-items:center;padding:1rem;z-index:1000}
+.modal-content{background:#fff;max-width:25rem;width:100%;padding:2rem;border-radius:var(--radius-2);
+               box-shadow:0 8px 24px rgb(0 0 0/.2);position:relative}
+.modal-close{position:absolute;top:.5rem;right:.5rem;background:none;border:none;
+             font-size:1.5rem;cursor:pointer}
+.modal-title{margin-top:0;font-size:var(--step-1)}
+.modal-list{padding-left:1rem;margin:1rem 0}

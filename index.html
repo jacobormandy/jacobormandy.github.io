@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Wellness Collective</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="header">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="container header__inner">
+    <a href="index.html" class="logo">
+      <img src="images/logo-cwc.svg" alt="Campus Wellness Collective logo">
+    </a>
+
+    <button id="nav-toggle" class="nav-toggle"
+            aria-controls="primary-navigation" aria-expanded="false">
+      <span class="sr-only">Menu</span>
+      <img src="icons/hamburger.svg" alt="">
+    </button>
+
+    <nav id="primary-navigation" class="nav" aria-expanded="false">
+      <ul class="nav__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workshops.html">Workshops</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+            <div class="container">
+                <h1>Welcome to Campus Wellness Collective</h1>
+                <p class="tagline">Find balance, build community, and thrive together.</p>
+                <div class="hero__cta">
+                    <a href="workshops.html" class="btn btn--primary">Join Next Workshop</a>
+                    <a href="resources.html" class="btn btn--secondary">Explore Resources</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="card-grid">
+                <a href="workshops.html" class="card">
+                    <img src="icons/calendar.svg" alt="Calendar icon" class="card-icon">
+                    <h3>Workshops & Events</h3>
+                    <p>Mindful gatherings and peer-led discussions</p>
+                </a>
+                <a href="resources.html" class="card">
+                    <img src="icons/book.svg" alt="Book icon" class="card-icon">
+                    <h3>Resources Library</h3>
+                    <p>Guides and tools for self-care</p>
+                </a>
+                <a href="about.html" class="card">
+                    <img src="icons/team.svg" alt="Team icon" class="card-icon">
+                    <h3>About Us</h3>
+                    <p>Meet our dedicated team</p>
+                </a>
+                <a href="contact.html" class="card">
+                    <img src="icons/lightbulb.svg" alt="Lightbulb icon" class="card-icon">
+                    <h3>Get Involved</h3>
+                    <p>Join our wellness community</p>
+                </a>
+            </div>
+        </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p>© 2025 Campus Wellness Collective · <a href="https://github.com/your-repo" target="_blank" rel="noopener">View on GitHub ↗</a></p>
+    <ul class="social-links">
+      <li><a href="#" aria-label="Facebook"><img src="icons/facebook.svg" alt=""></a></li>
+      <li><a href="#" aria-label="Instagram"><img src="icons/instagram.svg" alt=""></a></li>
+      <li><a href="mailto:info@campuswellness.org" aria-label="Email"><img src="icons/envelope.svg" alt=""></a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="js/menu.js"></script>
+</body>
+</html>

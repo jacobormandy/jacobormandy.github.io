@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Campus Wellness Collective</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="header">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="container header__inner">
+    <a href="index.html" class="logo">
+      <img src="images/logo-cwc.svg" alt="Campus Wellness Collective logo">
+    </a>
+
+    <button id="nav-toggle" class="nav-toggle"
+            aria-controls="primary-navigation" aria-expanded="false">
+      <span class="sr-only">Menu</span>
+      <img src="icons/hamburger.svg" alt="">
+    </button>
+
+    <nav id="primary-navigation" class="nav" aria-expanded="false">
+      <ul class="nav__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workshops.html">Workshops</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="container">
+    <h1>Get Involved</h1>
+    <p class="tagline">Join our wellness community</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="contact-grid">
+    <div class="contact-form">
+      <h2 class="section-title">Volunteer Signup</h2>
+      <form id="volunteer-form">
+        <fieldset>
+          <legend class="sr-only">Volunteer details</legend>
+          <label>
+            Name
+            <input type="text" required>
+          </label>
+          <!-- Add more fields as needed -->
+        </fieldset>
+        <button class="btn btn--primary">Join Us</button>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <h2 class="section-title">Contact Details</h2>
+      <p>Email: info@campuswellness.org</p>
+      <div class="social-links">
+        <ul class="social-links">
+          <li><a href="#" aria-label="Facebook"><img src="icons/facebook.svg" alt=""></a></li>
+          <li><a href="#" aria-label="Instagram"><img src="icons/instagram.svg" alt=""></a></li>
+          <li><a href="mailto:info@campuswellness.org" aria-label="Email"><img src="icons/envelope.svg" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p>© 2025 Campus Wellness Collective · <a href="https://github.com/your-repo" target="_blank" rel="noopener">View on GitHub ↗</a></p>
+    <ul class="social-links">
+      <li><a href="#" aria-label="Facebook"><img src="icons/facebook.svg" alt=""></a></li>
+      <li><a href="#" aria-label="Instagram"><img src="icons/instagram.svg" alt=""></a></li>
+      <li><a href="mailto:info@campuswellness.org" aria-label="Email"><img src="icons/envelope.svg" alt=""></a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="js/menu.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>
